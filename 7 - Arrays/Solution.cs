@@ -9,11 +9,14 @@ class Solution
         var str = Console.ReadLine();
         var arr = str.Split(' ');
 
-        Array.Reverse(arr);
-
-        foreach (var num in arr)
+        for (int i = 0; i < n / 2; i++)
         {
-            Console.Write($"{num} ");
+            int tmp = arr[i];
+            arr[i] = arr[n - i - 1];
+            arr[n - i - 1] = tmp;
+        }
+        foreach(var a in arr){
+            Console.Write(a+ " ");
         }
     }
 }
